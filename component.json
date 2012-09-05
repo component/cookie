@@ -1,0 +1,10 @@
+{
+  "name": "cookie",
+  "repo": "component/cookie",
+  "description": "Tiny cookie component",
+  "version": "0.0.1",
+  "keywords": ["cookie"],
+  "scripts": [
+    "index.js"
+  ]
+}
