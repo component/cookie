@@ -1,4 +1,3 @@
-
 /**
  * Encode.
  */
@@ -68,7 +67,7 @@ function set(name, value, options) {
 
 function get(name) {
   var obj = parse(document.cookie);
-  return obj[name];
+  return null == name ? obj : obj[name];
 }
 
 /**
