@@ -27,7 +27,7 @@ module.exports = function(name, value, options){
     case 2:
       return set(name, value, options);
     default:
-      return get(name);
+      return get.apply(null, arguments);
   }
 };
 
@@ -68,7 +68,7 @@ function set(name, value, options) {
 
 function get(name) {
   var obj = parse(document.cookie);
-  return null == name ? obj : obj[name];
+  return 0 == arguments.length ? obj : obj[name];
 }
 
 /**
