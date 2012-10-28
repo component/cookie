@@ -26,8 +26,10 @@ module.exports = function(name, value, options){
     case 3:
     case 2:
       return set(name, value, options);
+    case 1:
+      return get(name);
     default:
-      return get.apply(null, arguments);
+      return all();
   }
 };
 
@@ -59,6 +61,17 @@ function set(name, value, options) {
 }
 
 /**
+ * Return all cookies.
+ *
+ * @return {Object}
+ * @api private
+ */
+
+function all() {
+  return parse(document.cookie);
+}
+
+/**
  * Get cookie `name`.
  *
  * @param {String} name
@@ -67,8 +80,7 @@ function set(name, value, options) {
  */
 
 function get(name) {
-  var obj = parse(document.cookie);
-  return 0 == arguments.length ? obj : obj[name];
+  return all()[name];
 }
 
 /**

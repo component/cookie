@@ -19,6 +19,7 @@ cookie('species', 'ferret')
 // get
 var name = cookie('name')
 // => "tobi"
+
 var cookies = cookie()
 // => { name: "tobi", species: "ferret" }
 

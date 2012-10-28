@@ -40,10 +40,12 @@ describe('cookie(name, null)', function(){
 })
 
 describe('cookie()', function(){
-  it('should return all cookie parameters', function(){
+  it('should return all cookies', function(){
     cookie('name', 'loki');
-    cookie('full name', 'loki ferret');
+    cookie('species', 'ferret');
     var obj = cookie();
-    assert('loki' === obj.name && 'loki ferret' === obj['full name']);
+    assert(obj, 'object was not returned');
+    assert('loki' == obj.name, '.name failed');
+    assert('ferret' == obj.species, '.species failed');
   })
 })
