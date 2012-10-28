@@ -38,3 +38,12 @@ describe('cookie(name, null)', function(){
     assert(undefined === cookie('type'));
   })
 })
+
+describe('cookie()', function(){
+  it('should return all cookie parameters', function(){
+    cookie('name', 'loki');
+    cookie('full name', 'loki ferret');
+    var obj = cookie();
+    assert('loki' === obj.name && 'loki ferret' === obj['full name']);
+  })
+})
