@@ -1,4 +1,3 @@
-
 /**
  * Encode.
  */
@@ -49,7 +48,7 @@ function set(name, value, options) {
   if (null == value) options.maxage = -1;
 
   if (options.maxage) {
-    options.expires = new Date(new Date().getTime() + options.maxage);
+    options.expires = new Date(+new Date + options.maxage);
   }
 
   if (options.path) str += '; path=' + options.path;
