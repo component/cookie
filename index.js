@@ -49,7 +49,7 @@ function set(name, value, options) {
   if (null == value) options.maxage = -1;
 
   if (options.maxage) {
-    options.expires = new Date(Date.now() + options.maxage);
+    options.expires = new Date(new Date().getTime() + options.maxage);
   }
 
   if (options.path) str += '; path=' + options.path;
