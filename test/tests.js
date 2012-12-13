@@ -1,16 +1,6 @@
 
 var cookie = require('cookie');
-
-function assert(expr) {
-  if (!expr) throw new Error('assertion failed');
-}
-
-afterEach(function(){
-  cookie('name', null);
-  cookie('species', null);
-  cookie('full name', null);
-  cookie('type', null);
-});
+var assert = require('component-assert');
 
 describe('cookie(name, value)', function(){
   it('should set a cookie', function(){
@@ -44,6 +34,16 @@ describe('cookie(name, null)', function(){
     cookie('type', null);
     assert(undefined === cookie('type'));
   })
+
+  it('should not be returned in the cookie() object', function(){
+    cookie('full name', null);
+    cookie('mydb', null);
+    cookie('species', null);
+    cookie('name', '0');
+    var obj = cookie();
+    assert(1 == Object.keys(obj).length);
+    assert('0' == obj.name);
+  });
 })
 
 describe('cookie()', function(){
@@ -54,11 +54,5 @@ describe('cookie()', function(){
     assert(obj, 'object was not returned');
     assert('loki' == obj.name, '.name failed');
     assert('ferret' == obj.species, '.species failed');
-  })
-
-  it('should return no cookies', function(){
-    var obj = cookie();
-    var len = Object.keys(obj).length;
-    assert(len === 0);
   })
 })

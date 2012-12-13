@@ -4,6 +4,9 @@
   "description": "Tiny cookie component",
   "version": "1.0.0",
   "keywords": ["cookie"],
+  "development": {
+    "component/assert": "*"
+  },
   "scripts": [
     "index.js"
   ]
