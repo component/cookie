@@ -2,7 +2,7 @@
   "name": "cookie",
   "repo": "component/cookie",
   "description": "Tiny cookie component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": ["cookie"],
   "development": {
     "component/assert": "*"
