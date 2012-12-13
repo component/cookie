@@ -5,6 +5,13 @@ function assert(expr) {
   if (!expr) throw new Error('assertion failed');
 }
 
+afterEach(function(){
+  cookie('name', null);
+  cookie('species', null);
+  cookie('full name', null);
+  cookie('type', null);
+});
+
 describe('cookie(name, value)', function(){
   it('should set a cookie', function(){
     cookie('name', 'tobi');
@@ -47,5 +54,11 @@ describe('cookie()', function(){
     assert(obj, 'object was not returned');
     assert('loki' == obj.name, '.name failed');
     assert('ferret' == obj.species, '.species failed');
+  })
+
+  it('should return no cookies', function(){
+    var obj = cookie();
+    var len = Object.keys(obj).length;
+    assert(len === 0);
   })
 })
