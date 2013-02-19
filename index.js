@@ -47,7 +47,7 @@ function set(name, value, options) {
 
   if (null == value) options.maxage = -1;
 
-  if (options.maxage) {
+  if (options.maxage && !options.expires) {
     options.expires = new Date(+new Date + options.maxage);
   }
 
