@@ -1,4 +1,3 @@
-
 # cookie
 
   Cookie component.
@@ -13,7 +12,7 @@
 // set
 cookie('name', 'tobi')
 cookie('name', 'tobi', { path: '/' })
-cookie('name', 'tobi', { maxage: 60000 })
+cookie('name', 'tobi', { maxage: 60000 }) // in milliseconds
 cookie('species', 'ferret')
 
 // get
