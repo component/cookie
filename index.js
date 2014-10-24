@@ -1,14 +1,3 @@
-/**
- * Encode.
- */
-
-var encode = encodeURIComponent;
-
-/**
- * Decode.
- */
-
-var decode = decodeURIComponent;
 
 /**
  * Set or get cookie `name` with `value` and `options` object.
@@ -100,4 +89,24 @@ function parse(str) {
     obj[decode(pair[0])] = decode(pair[1]);
   }
   return obj;
+}
+
+/**
+ * Encode.
+ */
+
+function encode(value){
+  try {
+    return encodeURIComponent(value);
+  } catch (_) {}
+}
+
+/**
+ * Decode.
+ */
+
+function decode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch (_) {}
 }
