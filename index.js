@@ -1,14 +1,9 @@
-/**
- * Encode.
- */
-
-var encode = encodeURIComponent;
 
 /**
- * Decode.
+ * Module dependencies.
  */
 
-var decode = decodeURIComponent;
+var debug = require('debug')('cookie');
 
 /**
  * Set or get cookie `name` with `value` and `options` object.
@@ -100,4 +95,28 @@ function parse(str) {
     obj[decode(pair[0])] = decode(pair[1]);
   }
   return obj;
+}
+
+/**
+ * Encode.
+ */
+
+function encode(value){
+  try {
+    return encodeURIComponent(value);
+  } catch (e) {
+    debug('error `encode(%o)` - %o', value, e)
+  }
+}
+
+/**
+ * Decode.
+ */
+
+function decode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch (e) {
+    debug('error `decode(%o)` - %o', value, e)
+  }
 }

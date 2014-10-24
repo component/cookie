@@ -21,6 +21,11 @@ describe('cookie(name, value)', function(){
     assert('tobi ferret' == cookie('full name'));
   })
 
+  it('should ignore URIError', function(){
+    cookie('bad', '%');
+    cookie('bad', null);
+  });
+
   describe('when undefined', function(){
     it('should return undefined', function(){
       assert(undefined === cookie('whatever'));
@@ -44,6 +49,11 @@ describe('cookie(name, null)', function(){
     assert(1 == Object.keys(obj).length);
     assert('0' == obj.name);
   });
+
+  it('should ignore URIError and return null', function(){
+    document.cookie = 'bad=%';
+    assert(null == cookie('bad'));
+  });
 })
 
 describe('cookie()', function(){
@@ -55,4 +65,14 @@ describe('cookie()', function(){
     assert('loki' == obj.name, '.name failed');
     assert('ferret' == obj.species, '.species failed');
   })
+
+  it('should return all cookies and ignore URIErrors', function(){
+    cookie('name', 'loki');
+    cookie('species', 'ferret');
+    document.cookie = 'bad=%';
+    var obj = cookie();
+    assert('loki' == obj.name, '.name failed');
+    assert('ferret' == obj.species, '.species failed');
+    assert(null == obj.bad);
+  });
 })
