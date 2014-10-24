@@ -2,7 +2,7 @@
   "name": "cookie",
   "repo": "component/cookie",
   "description": "Tiny cookie component",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": ["cookie"],
   "dependencies": {
     "visionmedia/debug": "*"
