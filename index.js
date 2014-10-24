@@ -1,5 +1,11 @@
 
 /**
+ * Module dependencies.
+ */
+
+var debug = require('debug')('cookie');
+
+/**
  * Set or get cookie `name` with `value` and `options` object.
  *
  * @param {String} name
@@ -98,7 +104,9 @@ function parse(str) {
 function encode(value){
   try {
     return encodeURIComponent(value);
-  } catch (_) {}
+  } catch (e) {
+    debug('error `encode(%o)` - %o', value, e)
+  }
 }
 
 /**
@@ -108,5 +116,7 @@ function encode(value){
 function decode(value) {
   try {
     return decodeURIComponent(value);
-  } catch (_) {}
+  } catch (e) {
+    debug('error `decode(%o)` - %o', value, e)
+  }
 }
