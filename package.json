@@ -1,0 +1,26 @@
+{
+  "name": "component-cookie",
+  "description": "Tiny cookie component",
+  "version": "1.1.1",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "2.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "component": {
+    "scripts": {
+      "./index.js": "index.js"
+    }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/cookie.git"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "files": ["index.js", "LICENSE"]
+}
