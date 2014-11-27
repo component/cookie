@@ -3,6 +3,9 @@
   "description": "Tiny cookie component",
   "version": "1.1.1",
   "license": "MIT",
+  "dependencies": {
+    "debug": "2.1.0"
+  },
   "devDependencies": {
     "mocha": "*"
   },
