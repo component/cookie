@@ -4,7 +4,7 @@
   "version": "1.1.1",
   "license": "MIT",
   "dependencies": {
-    "debug": "2.1.0"
+    "debug": "*"
   },
   "devDependencies": {
     "mocha": "*"
@@ -14,13 +14,9 @@
       "./index.js": "index.js"
     }
   },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/component/cookie.git"
-  },
+  "repository": "component/cookie",
   "scripts": {
     "test": "make test"
   },
-  "files": ["index.js", "LICENSE"]
+  "files": ["index.js"]
 }
