@@ -62,7 +62,16 @@ function set(name, value, options) {
  */
 
 function all() {
-  return parse(document.cookie);
+  var str;
+  try {
+    str = document.cookie;
+  } catch (err) {
+    if (typeof console !== 'undefined' && typeof console.error === 'function') {
+      console.error(err.stack || err);
+    }
+    return {};
+  }
+  return parse(str);
 }
 
 /**
