@@ -7,7 +7,7 @@
     "debug": "*"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mochify": "^2.14.3"
   },
   "component": {
     "scripts": {
@@ -16,7 +16,9 @@
   },
   "repository": "component/cookie",
   "scripts": {
-    "test": "make test"
+    "test": "mochify"
   },
-  "files": ["index.js"]
+  "files": [
+    "index.js"
+  ]
 }

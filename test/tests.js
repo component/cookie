@@ -1,6 +1,6 @@
 
-var cookie = require('cookie');
-var assert = require('component-assert');
+var cookie = require('..');
+var assert = require('assert');
 
 describe('cookie(name, value)', function(){
   it('should set a cookie', function(){
