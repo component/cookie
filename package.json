@@ -4,7 +4,7 @@
   "version": "1.1.4",
   "license": "MIT",
   "dependencies": {
-    "debug": "2.2.0"
+    "debug": "^3.2.4"
   },
   "devDependencies": {
     "mocha": "*"
