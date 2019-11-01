@@ -1,6 +1,6 @@
 
-var cookie = require('cookie');
-var assert = require('component-assert');
+var cookie = require('../index');
+var assert = require('assert');
 
 describe('cookie(name, value)', function(){
   it('should set a cookie', function(){
@@ -8,7 +8,7 @@ describe('cookie(name, value)', function(){
     assert('tobi' == cookie('name'));
 
     cookie('species', 'ferret');
-    assert('ferret' == cookie('species'));
+    assert.equal('ferret', cookie('species'));
   })
 
   it('should escape', function(){
