@@ -75,4 +75,13 @@ describe('cookie()', function(){
     assert('ferret' == obj.species, '.species failed');
     assert(null == obj.bad);
   });
+
+  it('should properly handle equal signs in the value', function(){
+    // see https://github.com/matthewmueller/next-cookies/issues/20
+    var values = ['=', '==', '===', 'a=b', 'a==b', 'a=', 'SEnxqTgooNWEFfQ9gUipwdhUrZm1VejMLDQ=='];
+    values.forEach(function(value) {
+      document.cookie = 'name=' + value;
+      assert.equal(value, cookie('name'));
+    });
+  });
 })
