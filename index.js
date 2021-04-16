@@ -42,13 +42,13 @@ function set(name, value, options) {
 
   if (null == value) options.maxage = -1;
 
-  if (options.maxage) {
-    options.expires = new Date(+new Date + options.maxage);
+  if (options.maxage && !options.expires) {
+    options.expires = (new Date(+new Date + options.maxage)).toUTCString();
   }
 
   if (options.path) str += '; path=' + options.path;
   if (options.domain) str += '; domain=' + options.domain;
-  if (options.expires) str += '; expires=' + options.expires.toUTCString();
+  if (options.expires) str += '; expires=' + options.expires;
   if (options.secure) str += '; secure';
 
   document.cookie = str;
